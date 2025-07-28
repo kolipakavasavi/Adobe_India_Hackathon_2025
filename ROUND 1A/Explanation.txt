@@ -1,0 +1,29 @@
+This solution focuses on extracting a hierarchical outline from PDF documents by leveraging font and layout information available within the PDF structure. The main objective is to identify the document’s title and its headings across multiple levels (H1, H2, H3) and organize them along with their page numbers into a structured JSON output.
+
+Key Highlights:
+Title Detection:
+Uses font size, word count, and page layout heuristics to detect the document title, typically centered and large on the first page.
+
+Heading Classification:
+Differentiates headings by font size and boldness, classifying them into three levels:
+
+H1: Large and bold (≥ 20pt)
+
+H2: Medium and bold (≥ 16pt)
+
+H3: Smaller font size (≥ 13pt)
+
+Text Extraction and Parsing:
+Iterates through all pages, extracting text spans, filtering out empty strings, and applying classification logic.
+
+Output Structure:
+Returns a JSON object containing the title and a list of headings with their level, text, and page number.
+
+Benefits:
+Fully offline and self-contained, suitable for secure and containerized environments.
+
+Minimal dependencies with a focus on PyMuPDF.
+
+Robust for varied document types such as academic papers, manuals, and reports.
+
+This approach ensures a balance between accuracy and efficiency, relying on typographical cues to deliver a meaningful outline without requiring complex NLP models or external services.

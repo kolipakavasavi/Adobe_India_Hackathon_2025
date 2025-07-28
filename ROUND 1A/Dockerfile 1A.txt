@@ -1,0 +1,16 @@
+# Adobe Hackathon Round 1A: Extract PDF headings (H1, H2, H3)
+
+FROM --platform=linux/amd64 python:3.10-slim
+
+# Set working directory
+WORKDIR /app
+
+# Install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy all code and folders into the image
+COPY . .
+
+# Run the script
+CMD ["python", "app/main.py"]
