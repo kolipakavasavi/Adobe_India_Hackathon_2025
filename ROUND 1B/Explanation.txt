@@ -1,0 +1,35 @@
+This solution is designed to analyze a diverse collection of PDFs and extract the most relevant content tailored to a specified persona and their goal. It operates fully offline and focuses on keyword-based relevance scoring to identify important sections across multiple documents.
+
+Key Components:
+Input Handling
+Accepts 3 to 50 PDFs from any domain (e.g., travel, food, research). The user provides a persona and a job-to-be-done which guide the relevance scoring.
+
+Text Extraction
+Uses PyMuPDF (fitz) to extract text from each page of every PDF. This ensures granular access to document content for relevance analysis.
+
+Relevance Scoring
+Implements a simple yet effective keyword matching approach where each page is scored based on the presence of domain-relevant keywords derived from the persona’s goal.
+
+Section Identification
+The first line of each page is treated as a candidate section title, and pages with positive relevance scores are collected as important sections.
+
+Structured Output
+Produces a JSON output containing:
+
+Metadata: persona, job description, input files, and processing timestamp
+
+Extracted Sections: ranked by importance with document name, page number, and section title
+
+Subsection Analysis: snippet previews from relevant pages to provide context
+
+Benefits:
+Domain Agnostic: Can process PDFs from any field due to flexible keyword input.
+
+Scalable: Handles large collections (up to 50 PDFs) efficiently.
+
+Offline Ready: No external API or internet access required.
+
+Easy to Customize: Persona, job description, and keywords can be tailored to different tasks or industries.
+
+Use Case Example:
+For a General Knowledge Explorer, the tool identifies key insights, summaries, and highlights in large PDF collections, enabling quick understanding and research efficiency.
