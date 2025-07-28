@@ -13,7 +13,7 @@ This project is a submission for **Round 1A/1B** of the Adobe India Hackathon 20
 
 ---
 
-## 🎭 Persona
+## Persona
 **Round 1B Example**:
 - **Role**: Travel Planner  
 - **Goal**: Plan a 4-day trip for a group of 10 college friends  
